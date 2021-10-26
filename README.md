@@ -22,16 +22,21 @@ Multiple containers can communicate with each other only when they are in the sa
 
 Build application image based on Dockerfile and then run container.
 `docker build -t docker-tutorial-webservice .`
+
 `docker run -dp 5000:80 --network docker_tutorial_network --network-alias app docker-tutorial-webservice`
 
 Build nginx image based on Dockerfile and then run container.
 `docker build -t docker-tutorial-nginx .`
+
 `docker run -dp 80:8081 --network docker_tutorial_network --network-alias server docker-tutorial-nginx`
 
 ### Running containers with docker-compose
 
 Container definitions should be stored in `docker-compose.yml` file.
+
+Start/stop containers.
 `docker-compose up`
+
 `docker-compose down`
 
 ### Additional commands
