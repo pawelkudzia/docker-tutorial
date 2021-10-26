@@ -13,19 +13,23 @@ There are useful commands.
 ### Prepare application
 
 For building the `Software` application for production environment following command should be used.
+
 `dotnet publish --nologo --configuration Release --output ./app ./src/WebService/WebService.csproj`
 
 ### Running containers with run command
 
 Multiple containers can communicate with each other only when they are in the same network.
+
 `docker network create docker_tutorial_network`
 
 Build application image based on Dockerfile and then run container.
+
 `docker build -t docker-tutorial-webservice .`
 
 `docker run -dp 5000:80 --network docker_tutorial_network --network-alias app docker-tutorial-webservice`
 
 Build nginx image based on Dockerfile and then run container.
+
 `docker build -t docker-tutorial-nginx .`
 
 `docker run -dp 80:8081 --network docker_tutorial_network --network-alias server docker-tutorial-nginx`
@@ -35,6 +39,7 @@ Build nginx image based on Dockerfile and then run container.
 Container definitions should be stored in `docker-compose.yml` file.
 
 Start/stop containers.
+
 `docker-compose up`
 
 `docker-compose down`
@@ -42,10 +47,13 @@ Start/stop containers.
 ### Additional commands
 
 To run command in running container following command should be used.
+
 `docker exec -it <container-id> /bin/sh`
 
 Run [go-wrk](https://github.com/tsliwowicz/go-wrk) with the same network which `Software` and `nginx` use.
+
 `docker run -it --network docker_tutorial_network --network-alias go-wrk williamwalter/go-wrk -c 256 -d 60 http://app/api/test`
 
 The same as above but network name in `docker-compose` case is different.
+
 `docker run -it --network docker-tutorial_default --network-alias go-wrk williamwalter/go-wrk -c 256 -d 60 http://app/api/test`
