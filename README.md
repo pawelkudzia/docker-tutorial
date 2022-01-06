@@ -1,6 +1,6 @@
 # Docker Tutorial
 
-This is demo which shows how to use basic Docker commands and [docker-compose](https://docs.docker.com/compose/) which allows running multi-container Docker applications.
+This is demo which shows how to use basic [Docker](https://www.docker.com/) commands and [docker-compose](https://docs.docker.com/compose/) which allows running multi-container Docker applications.
 
 Repository contains two containers:
 1. `Software` is very simple web service created by using [.NET](https://dotnet.microsoft.com/download) technology,

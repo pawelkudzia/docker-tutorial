@@ -1,11 +1,11 @@
-version: "3.8"
+version: "3.9"
 
 services:
   app:
     build: ./Software
     ports:
-      - 5000:80
+      - "5000:80"
   server:
     build: ./nginx
     ports:
-      - 80:8081
+      - "80:8081"
