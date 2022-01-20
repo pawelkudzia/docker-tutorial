@@ -38,17 +38,21 @@ Build nginx image based on Dockerfile and then run container.
 
 Container definitions should be stored in `docker-compose.yml` file.
 
-Start/stop containers.
+Start, stop or show running containers.
 
-`docker-compose up`
+`docker-compose up -d`
 
 `docker-compose down`
+
+`docker-compose ps -a`
 
 ### Additional commands
 
 To run command in running container following command should be used.
 
 `docker exec -it <container-id> /bin/sh`
+
+`docker exec <service> /bin/sh`
 
 Run [go-wrk](https://github.com/tsliwowicz/go-wrk) with the same network which `Software` and `nginx` use.
 
