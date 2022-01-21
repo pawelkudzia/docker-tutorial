@@ -14,6 +14,22 @@ There are useful commands.
 
 For building the `Software` application for production environment following command should be used.
 
+`dotnet new webapi --name WebService`
+
+`dotnet new xunit --name WebService.Tests`
+
+`dotnet new sln --name Software`
+
+`dotnet sln Software.sln add ./src/WebService/WebService.csproj`
+
+`dotnet sln Software.sln add ./tests/WebService.Tests/WebService.Tests.csproj`
+
+`dotnet add ./tests/WebService.Tests/WebService.Tests.csproj reference ./src/WebService/WebService.csproj`
+
+`dotnet build`
+
+`dotnet test`
+
 `dotnet publish --nologo --configuration Release --output ./app ./src/WebService/WebService.csproj`
 
 ### Running containers with run command
@@ -32,7 +48,7 @@ Build nginx image based on Dockerfile and then run container.
 
 `docker build -t docker-tutorial-nginx .`
 
-`docker run -dp 80:8081 --network docker_tutorial_network --network-alias server docker-tutorial-nginx`
+`docker run -dp 80:8080 --network docker_tutorial_network --network-alias server docker-tutorial-nginx`
 
 ### Running containers with docker-compose
 

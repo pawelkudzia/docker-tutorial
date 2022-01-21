@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F2261B60-7DB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "src\WebService\WebService.csproj", "{889C5FFA-84C6-41ED-84C5-19179F4A7A3A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E646A511-4FAC-45D4-9BC6-0461F3055427}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService.Tests", "tests\WebService.Tests\WebService.Tests.csproj", "{74EC46B6-336C-42B3-867C-E01A1A306FDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,8 +36,21 @@ Global
 		{889C5FFA-84C6-41ED-84C5-19179F4A7A3A}.Release|x64.Build.0 = Release|Any CPU
 		{889C5FFA-84C6-41ED-84C5-19179F4A7A3A}.Release|x86.ActiveCfg = Release|Any CPU
 		{889C5FFA-84C6-41ED-84C5-19179F4A7A3A}.Release|x86.Build.0 = Release|Any CPU
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF}.Debug|x64.Build.0 = Debug|Any CPU
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF}.Debug|x86.Build.0 = Debug|Any CPU
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF}.Release|x64.ActiveCfg = Release|Any CPU
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF}.Release|x64.Build.0 = Release|Any CPU
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF}.Release|x86.ActiveCfg = Release|Any CPU
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{889C5FFA-84C6-41ED-84C5-19179F4A7A3A} = {F2261B60-7DBE-4B71-A2B7-5C146D706BCE}
+		{74EC46B6-336C-42B3-867C-E01A1A306FDF} = {E646A511-4FAC-45D4-9BC6-0461F3055427}
 	EndGlobalSection
 EndGlobal
