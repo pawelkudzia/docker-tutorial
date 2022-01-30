@@ -54,13 +54,15 @@ Build nginx image based on Dockerfile and then run container.
 
 Container definitions should be stored in `docker-compose.yml` file.
 
-Start, stop or show running containers.
+`docker-compose build`
 
 `docker-compose up -d`
 
 `docker-compose down`
 
 `docker-compose ps -a`
+
+`docker-compose logs -f`
 
 ### Additional commands
 
