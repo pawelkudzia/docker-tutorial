@@ -8,8 +8,6 @@ Repository contains two containers:
 
 ## Commands
 
-There are useful commands.
-
 ### Prepare application
 
 For building the `Software` application for production environment following command should be used.
