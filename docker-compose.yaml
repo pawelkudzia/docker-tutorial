@@ -3,12 +3,16 @@ version: "3.9"
 services:
   app:
     container_name: app
-    build: ./Software
+    build:
+      context: ./Software
+      dockerfile: app.dockerfile
     expose:
       - "80"
-  server:
+  nginx:
     container_name: nginx
-    build: ./nginx
+    build:
+      context: ./nginx
+      dockerfile: nginx.dockerfile
     ports:
       - "8080:8080"
     volumes:
