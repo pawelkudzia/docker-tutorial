@@ -1,6 +1,6 @@
 # Docker Tutorial
 
-This is demo which shows how to use basic [Docker](https://www.docker.com/) commands and [docker-compose](https://docs.docker.com/compose/) which allows running multi-container Docker applications.
+This demo shows how to use basic [Docker](https://www.docker.com/) commands and [docker-compose](https://docs.docker.com/compose/) which allows running multi-container Docker applications.
 
 Repository contains two containers:
 1. `Software` is web service created by using [.NET](https://dotnet.microsoft.com/download) technology,
@@ -78,7 +78,7 @@ docker run -dp 80:8080 --network docker_tutorial_network --network-alias server 
 
 ### Running containers with docker-compose
 
-Container definitions should be stored in `docker-compose.yml` file.
+Container definitions should be stored in `docker-compose.yaml` file.
 
 ```
 docker-compose build
