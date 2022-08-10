@@ -3,38 +3,46 @@
 This demo shows how to use basic [Docker](https://www.docker.com/) commands and [docker-compose](https://docs.docker.com/compose/) which allows running multi-container Docker applications.
 
 Repository contains two containers:
-1. `Software` is web service created by using [.NET](https://dotnet.microsoft.com/download) technology,
-2. `nginx` represents frontend of the whole software which in this case is reverse proxy server. [nginx](https://nginx.org/en/) is popular HTTP and reverse proxy server.
+1. `WebService` is web service created by using [.NET](https://dotnet.microsoft.com/download) technology,
+2. `nginx` represents frontend of the software which in this case is reverse proxy server. [nginx](https://nginx.org/en/) is popular HTTP and reverse proxy server.
 
 ## Commands
 
-### Prepare application
-
-For building the `Software` application for production environment following command should be used.
+### WebService
 
 ```
-dotnet new webapi --name WebService
+dotnet new webapi --name WebService.Api
 ```
 
 ```
-dotnet new xunit --name WebService.Tests
+dotnet new xunit --name WebService.Tests.EndToEnd
 ```
 
 ```
-dotnet new sln --name Software
+dotnet new sln --name WebService
 ```
 
 ```
-dotnet sln Software.sln add ./src/WebService/WebService.csproj
+dotnet sln WebService.sln add ./src/WebService.Api/WebService.Api.csproj
 ```
 
 ```
-dotnet sln Software.sln add ./tests/WebService.Tests/WebService.Tests.csproj
+dotnet sln WebService.sln add ./tests/WebService.Tests.EndToEnd/WebService.Tests.EndToEnd.csproj
 ```
 
 ```
-dotnet add ./tests/WebService.Tests/WebService.Tests.csproj reference ./src/WebService/WebService.csproj
+dotnet add ./tests/WebService.Tests.EndToEnd/WebService.Tests.EndToEnd.csproj reference ./src/WebService.Api/WebService.Api.csproj
 ```
+
+#### NuGet
+
+Project `WebService.Tests.EndToEnd` uses following NuGet packages.
+
+```
+dotnet add package Microsoft.AspNetCore.Mvc.Testing --version 6.0.8
+```
+
+#### Deploy
 
 ```
 dotnet build
@@ -45,10 +53,12 @@ dotnet test
 ```
 
 ```
-dotnet publish --nologo --configuration Release --output ./app ./src/WebService/WebService.csproj
+dotnet publish --nologo --configuration Release --output ./app ./src/WebService.Api/WebService.Api.csproj
 ```
 
-### Running containers with run command
+### Docker
+
+#### Running containers with run command
 
 Multiple containers can communicate with each other only when they are in the same network.
 
@@ -76,7 +86,7 @@ docker build -t docker-tutorial-nginx .
 docker run -dp 80:8080 --network docker_tutorial_network --network-alias server docker-tutorial-nginx
 ```
 
-### Running containers with docker-compose
+#### Running containers with docker-compose
 
 Container definitions should be stored in `docker-compose.yaml` file.
 
@@ -112,7 +122,7 @@ docker exec -it <container-id> /bin/sh
 docker exec <service> /bin/sh
 ```
 
-Run [go-wrk](https://github.com/tsliwowicz/go-wrk) with the same network which `Software` and `nginx` use.
+Run [go-wrk](https://github.com/tsliwowicz/go-wrk) with the same network which `WebService` and `nginx` use.
 
 ```
 docker run -it --network docker_tutorial_network --network-alias go-wrk williamwalter/go-wrk -c 256 -d 60 http://app/api/test

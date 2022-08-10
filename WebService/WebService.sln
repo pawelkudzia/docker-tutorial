@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B30CA875-AFCA-4D1F-9671-EF3570373947}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService.Api", "src\WebService.Api\WebService.Api.csproj", "{AF9F4608-4751-4B90-91A6-1885357BA820}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7432D1A2-BBD0-44C8-97E0-6BA92754EB1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService.Tests.EndToEnd", "tests\WebService.Tests.EndToEnd\WebService.Tests.EndToEnd.csproj", "{D4BD060F-2216-4A89-9B4E-B4ECEAA0EDD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF9F4608-4751-4B90-91A6-1885357BA820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF9F4608-4751-4B90-91A6-1885357BA820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF9F4608-4751-4B90-91A6-1885357BA820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF9F4608-4751-4B90-91A6-1885357BA820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4BD060F-2216-4A89-9B4E-B4ECEAA0EDD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4BD060F-2216-4A89-9B4E-B4ECEAA0EDD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4BD060F-2216-4A89-9B4E-B4ECEAA0EDD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4BD060F-2216-4A89-9B4E-B4ECEAA0EDD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AF9F4608-4751-4B90-91A6-1885357BA820} = {B30CA875-AFCA-4D1F-9671-EF3570373947}
+		{D4BD060F-2216-4A89-9B4E-B4ECEAA0EDD2} = {7432D1A2-BBD0-44C8-97E0-6BA92754EB1F}
+	EndGlobalSection
+EndGlobal
