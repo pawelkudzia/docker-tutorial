@@ -3,7 +3,7 @@
 This demo shows how to use basic [Docker](https://www.docker.com/) commands and [docker-compose](https://docs.docker.com/compose/) which allows running multi-container Docker applications.
 
 Repository contains two containers:
-1. `WebService` is web service created by using [.NET](https://dotnet.microsoft.com/download) technology,
+1. `WebService` is web service created by using [.NET](https://dotnet.microsoft.com/download),
 2. `nginx` represents frontend of the software which in this case is reverse proxy server. [nginx](https://nginx.org/en/) is popular HTTP and reverse proxy server.
 
 ## Commands
