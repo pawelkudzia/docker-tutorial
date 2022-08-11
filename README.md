@@ -58,6 +58,11 @@ dotnet test
 dotnet publish --nologo --configuration Release --output ./app ./src/WebService.Api/WebService.Api.csproj
 ```
 
+#### Tools
+
+- [Autofac](https://github.com/autofac/Autofac.Extensions.DependencyInjection/issues/97) in .NET 6,
+- [dotnet-outdated](https://github.com/dotnet-outdated/dotnet-outdated).
+
 ### Docker
 
 #### Running containers with run command
