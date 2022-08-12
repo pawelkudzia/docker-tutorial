@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc.Testing;
+using WebService.Api;
 
 namespace WebService.Tests.EndToEnd.Controllers;
 

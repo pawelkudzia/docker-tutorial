@@ -23,7 +23,7 @@ app.MapControllers();
 
 app.Run();
 
-namespace WebService
+namespace WebService.Api
 {
     public partial class Program
     {
