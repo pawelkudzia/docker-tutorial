@@ -14,9 +14,9 @@ public class ApiTestController : ControllerBase
     }
 
     [HttpGet("test")]
-    public async Task<IActionResult> Test()
+    public async Task<IActionResult> TestAsync()
     {
-         _logger.LogInformation("[{}] Logger is working! Path: {}", DateTime.UtcNow, Request.Path);
+        _logger.LogInformation("[{}] Logger is working! Path: {}", DateTime.UtcNow, Request.Path);
 
         var apiTestDto = new
         {
