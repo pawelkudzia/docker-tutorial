@@ -118,7 +118,7 @@ docker-compose ps -a
 docker-compose logs -f
 ```
 
-### Additional commands
+#### Additional commands
 
 To run command in running container following command should be used.
 
