@@ -7,11 +7,9 @@ Repository contains two containers:
 1. `WebService` is web service created by using [.NET](https://dotnet.microsoft.com/download),
 2. `nginx` represents frontend of the software which in this case is reverse proxy server. [nginx](https://nginx.org/en/) is popular HTTP and reverse proxy server.
 
-## Commands
+## WebService
 
-### WebService
-
-#### Create application
+### Create application
 
 ```text
 dotnet new webapi --name WebService.Api
@@ -37,7 +35,7 @@ dotnet sln WebService.sln add ./tests/WebService.Tests.EndToEnd/WebService.Tests
 dotnet add ./tests/WebService.Tests.EndToEnd/WebService.Tests.EndToEnd.csproj reference ./src/WebService.Api/WebService.Api.csproj
 ```
 
-#### NuGet
+### NuGet
 
 Project `WebService.Tests.EndToEnd` uses following NuGet packages.
 
@@ -45,7 +43,7 @@ Project `WebService.Tests.EndToEnd` uses following NuGet packages.
 dotnet add package Microsoft.AspNetCore.Mvc.Testing --version 6.0.8
 ```
 
-#### Deploy
+### Deploy
 
 ```text
 dotnet build
@@ -59,14 +57,14 @@ dotnet test
 dotnet publish --nologo --configuration Release --output ./app ./src/WebService.Api/WebService.Api.csproj
 ```
 
-#### Tools
+### Tools
 
 - [Autofac](https://github.com/autofac/Autofac.Extensions.DependencyInjection/issues/97) in .NET 6,
 - [dotnet-outdated](https://github.com/dotnet-outdated/dotnet-outdated).
 
-### Docker
+## Docker
 
-#### Running containers with run command
+### Running containers with run command
 
 Multiple containers can communicate with each other only when they are in the same network.
 
@@ -94,7 +92,7 @@ docker build -t docker-tutorial-nginx .
 docker run -dp 80:8080 --network docker_tutorial_network --network-alias server docker-tutorial-nginx
 ```
 
-#### Running containers with docker-compose
+### Running containers with docker-compose
 
 Container definitions should be stored in `docker-compose.yaml` file.
 
@@ -118,7 +116,7 @@ docker-compose ps -a
 docker-compose logs -f
 ```
 
-#### Additional commands
+### Additional commands
 
 To run command in running container following command should be used.
 
