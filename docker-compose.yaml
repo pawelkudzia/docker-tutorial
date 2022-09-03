@@ -16,6 +16,6 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./nginx/project.com.conf:/etc/nginx/conf.d/project.com.conf
+      - ./nginx/app.com.conf:/etc/nginx/conf.d/app.com.conf
     depends_on:
       - app
