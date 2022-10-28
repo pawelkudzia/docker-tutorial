@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0.401-alpine3.16-amd64 AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0.402-alpine3.16-amd64 AS build
 WORKDIR /source
 RUN mkdir -p src/WebService.Api
 
@@ -12,7 +12,7 @@ COPY ./src/WebService.Api ./src/WebService.Api
 RUN dotnet publish --nologo --no-restore --configuration Release --output /app ./src/WebService.Api/WebService.Api.csproj
 
 # final stage/image
-FROM mcr.microsoft.com/dotnet/aspnet:6.0.9-alpine3.16-amd64
+FROM mcr.microsoft.com/dotnet/aspnet:6.0.10-alpine3.16-amd64
 WORKDIR /app
 COPY --from=build /app .
 ENTRYPOINT ["dotnet", "WebService.Api.dll"]
