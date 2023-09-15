@@ -5,14 +5,14 @@ services:
     container_name: app
     build:
       context: ./WebService
-      dockerfile: app.dockerfile
+      dockerfile: app.Dockerfile
     expose:
       - "80"
   nginx:
     container_name: nginx
     build:
       context: ./nginx
-      dockerfile: nginx.dockerfile
+      dockerfile: nginx.Dockerfile
     ports:
       - "8080:8080"
     volumes:
