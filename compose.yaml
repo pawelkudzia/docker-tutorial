@@ -1,0 +1,19 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: ./docker/app/app.Dockerfile
+    expose:
+      - "80"
+  nginx:
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: ./docker/nginx/nginx.Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./docker/nginx/app.com.conf:/etc/nginx/conf.d/app.com.conf
+    depends_on:
+      - app
