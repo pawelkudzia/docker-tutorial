@@ -1,8 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -18,14 +16,21 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthorization();
-app.MapControllers();
+
+app.MapGet("/api/test", async (HttpRequest request) =>
+{
+    app.Logger.LogInformation("[{}] Logger is working! Path: {}", DateTime.UtcNow, request.Path);
+
+    var responseDto = new
+    {
+        Message = $"API is working! Path: {request.Path}",
+        Date = DateTime.UtcNow,
+        DotnetVersion = Environment.Version,
+    };
+
+    return Results.Ok(await Task.FromResult(responseDto));
+})
+.WithName("ApiTest")
+.WithOpenApi();
 
 app.Run();
-
-namespace WebService.Api
-{
-    public partial class Program
-    {
-    }
-}
