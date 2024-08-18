@@ -94,7 +94,7 @@ docker run -dp 80:8080 --network docker_tutorial_network --network-alias server 
 
 ## Running containers with docker-compose
 
-Container definitions should be stored in `docker-compose.yaml` file.
+Container definitions should be stored in `compose.yaml` file.
 
 ```text
 docker-compose build
@@ -139,3 +139,7 @@ The same as above but network name in `docker-compose` case is different.
 ```text
 docker run -it --network docker-tutorial_default --network-alias go-wrk williamwalter/go-wrk -c 256 -d 60 http://app/api/test
 ```
+
+## License
+
+This repository is licensed under the [MIT](https://github.com/pawelkudzia/docker-tutorial/blob/main/LICENSE) license.
